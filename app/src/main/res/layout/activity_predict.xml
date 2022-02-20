@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PredictActivity">
+
+    <TextView
+        android:id="@+id/predicttext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/prediction_module"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/radius_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/predicttext"
+        android:layout_marginTop="2dp"
+        android:hint="@string/radius_mean"
+        android:minHeight="48dp"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/texture_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radius_mean"
+        android:layout_marginTop="2dp"
+        android:hint="@string/texture_mean"
+        android:minHeight="48dp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/perimeter_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/texture_mean"
+        android:layout_marginTop="2dp"
+        android:hint="@string/perimeter_mean"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/area_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/perimeter_mean"
+        android:layout_marginTop="2dp"
+        android:hint="@string/area_mean"
+        android:minHeight="48dp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/smoothness_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/area_mean"
+        android:layout_marginTop="2dp"
+        android:hint="@string/smoothness_mean"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/compactness_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/smoothness_mean"
+        android:layout_marginTop="2dp"
+        android:hint="@string/compactness_mean"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/concavity_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/compactness_mean"
+        android:layout_marginTop="2dp"
+        android:hint="@string/concavity_mean"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/cpoints_mean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/concavity_mean"
+        android:layout_marginTop="2dp"
+        android:hint="@string/cpoints_mean"
+        android:minHeight="48dp"
+        android:importantForAutofill="no" />
+    <Button
+        android:id="@+id/btnpredict"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/predict"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/cpoints_mean"/>
+    <TextView
+        android:id="@+id/predictanstext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnpredict"
+        android:text="@string/prediction_answer"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

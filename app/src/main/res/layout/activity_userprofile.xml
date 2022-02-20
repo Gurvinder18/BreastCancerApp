@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UserprofileActivity">
+
+        <TextView
+            android:id="@+id/prediction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prediction_module"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/browseimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prediction"
+            android:layout_marginTop="2dp"
+            android:minHeight="48dp"
+            android:text="@string/please_browse_image_to_predict"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/mamogramimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/browseimage"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/mamogram_image"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <Button
+            android:id="@+id/browsebutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mamogramimage"
+            android:layout_marginTop="5dp"
+            android:text="@string/browsebutton"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/uploadbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/browsebutton"
+            android:layout_marginTop="5dp"
+            android:text="@string/uploadbutton"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</ScrollView>

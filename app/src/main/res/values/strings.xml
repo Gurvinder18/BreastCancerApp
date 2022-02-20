@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BreastCancerApp</string>
+    <string name="predict">Predict</string>
+    <string name="smoothness_mean">Smoothness_mean</string>
+    <string name="area_mean">Area_mean</string>
+    <string name="perimeter_mean">Perimeter_mean</string>
+    <string name="prediction_module">Prediction Module</string>
+    <string name="radius_mean">Radius_mean</string>
+    <string name="compactness_mean">Compactness_mean</string>
+    <string name="concavity_mean">Concavity_mean</string>
+    <string name="cpoints_mean">Cpoints_mean</string>
+    <string name="prediction_answer">Prediction Answer</string>
+    <string name="texture_mean">Texture_mean</string>
+    <string name="mamogram_image">mamogram_image</string>
+    <string name="please_browse_image_to_predict">Please browse image to Predict</string>
+    <string name="browsebutton">Browse</string>
+    <string name="uploadbutton">Upload</string>
+
+</resources>
