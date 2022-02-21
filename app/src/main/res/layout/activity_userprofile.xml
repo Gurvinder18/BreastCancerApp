@@ -1,65 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UserprofileActivity"
+    android:background="#fff">
 
+    <include layout="@layout/toolbar" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".UserprofileActivity">
-
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="15dp"
+        android:orientation="vertical">
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/ic_baseline_person"/>
         <TextView
-            android:id="@+id/prediction"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/prediction_module"
-            android:textAlignment="center"
-            android:textSize="40sp"
-            android:textStyle="bold" />
+            android:text="Username"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="10dp"/>
 
-        <TextView
-            android:id="@+id/browseimage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/prediction"
-            android:layout_marginTop="2dp"
-            android:minHeight="48dp"
-            android:text="@string/please_browse_image_to_predict"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
 
         <ImageView
-            android:id="@+id/mamogramimage"
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_person"/>
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/browseimage"
-            android:layout_marginTop="5dp"
-            android:contentDescription="@string/mamogram_image"
-            android:src="@drawable/ic_launcher_foreground" />
-
-        <Button
-            android:id="@+id/browsebutton"
-            android:layout_width="match_parent"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/mamogramimage"
-            android:layout_marginTop="5dp"
-            android:text="@string/browsebutton"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:text="Gurvinder"
+            android:layout_marginLeft="25dp"
+            android:textSize="18dp"
+            android:textColor="@color/darkergrey"
+            android:textStyle="italic"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/darkergrey"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
-        <Button
-            android:id="@+id/uploadbutton"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_email"/>
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/browsebutton"
-            android:layout_marginTop="5dp"
-            android:text="@string/uploadbutton"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:text="E-mail"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gurvi1888@gmail.com"
+            android:layout_marginLeft="25dp"
+            android:textSize="18dp"
+            android:textColor="@color/darkergrey"
+            android:textStyle="italic"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/darkergrey"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_btn"
+            android:text="Edit Profile"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp"
+            android:drawableLeft="@drawable/ic_baseline_pen"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_btn"
+            android:text="Change Password"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp"
+            android:drawableLeft="@drawable/ic_baseline_lock"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="15dp"/>
 
-    </RelativeLayout>
-</ScrollView>
+    </LinearLayout>
+
+
+</LinearLayout>
+
