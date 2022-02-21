@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".WidgetActivity">
 
         <TextView
@@ -39,7 +39,8 @@
             android:layout_below="@id/browseimage"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/mamogram_image"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/ic_launcher_foreground"
+            tools:ignore="ImageContrastCheck" />
 
         <Button
             android:id="@+id/browsebutton"

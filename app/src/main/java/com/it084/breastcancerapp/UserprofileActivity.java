@@ -32,6 +32,7 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -40,102 +41,47 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserprofileActivity extends AppCompatActivity {
-    Button browsebtn,uploadbtn;
-    ImageView mamogram_image;
-    Bitmap bmap;
-    String encoded_image;
-    private static final String url="";
-    private static final int PICK_IMAGE=1;
+    ImageView back_arrow;
+    TextView logout,image_username,user_name,user_email,edit_profile,change_password;
+    CircularImageView circularImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userprofile);
-        mamogram_image=(ImageView) findViewById(R.id.mamogramimage);
-        browsebtn=(Button) findViewById(R.id.browsebutton);
-        uploadbtn=(Button) findViewById(R.id.uploadbutton);
-        browsebtn.setOnClickListener(new View.OnClickListener() {
+        back_arrow=(ImageView) findViewById(R.id.toolbar_back_arrow);
+        circularImageView=(CircularImageView) findViewById(R.id.circular_image);
+        logout=(TextView) findViewById(R.id.toolbar_logout_textview);
+        image_username=(TextView) findViewById(R.id.imageusername);
+        user_name=(TextView) findViewById(R.id.Name_user);
+        user_email=(TextView) findViewById(R.id.email_user);
+        edit_profile=(TextView) findViewById(R.id.editprofile);
+        change_password=(TextView) findViewById(R.id.changepassword);
+        back_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dexter.withContext(UserprofileActivity.this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                        .withListener(new PermissionListener() {
-                            @Override
-                            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                                Intent intent=new Intent(Intent.ACTION_PICK);
-                                intent.setType("image/*");
-                                startActivityForResult(intent,1);
-
-
-                            }
-
-                            @Override
-                            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
-
-                            }
-
-                            @Override
-                            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
-                                permissionToken.continuePermissionRequest();
-                            }
-                        }).check();
+                back_to_home();
             }
         });
-        uploadbtn.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 uploadImagetoServer();
+                logout_clicked();
             }
         });
+
     }
 
-    private void uploadImagetoServer() {
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                mamogram_image.setImageResource(R.drawable.ic_launcher_foreground);
-                Toast.makeText(UserprofileActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(UserprofileActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> map=new HashMap<String,String>();
-                map.put("upload",encoded_image);
-                return map;
-            }
-        };
-        RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
-        requestQueue.add(stringRequest);
+    private void logout_clicked() {
+        Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode==1 && resultCode==RESULT_OK){
-            Uri filepath=data.getData();
-            try {
-                InputStream inputStream=getContentResolver().openInputStream(filepath);
-                bmap=BitmapFactory.decodeStream(inputStream);
-                mamogram_image.setImageBitmap(bmap);
-                encodeBitmapImage(bmap);
-                System.out.println("Image encoded");
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void encodeBitmapImage(Bitmap bmap) {
-        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
-        bmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-        byte[] bytesofImage=byteArrayOutputStream.toByteArray();
-        encoded_image=android.util.Base64.encodeToString(bytesofImage, Base64.DEFAULT);
-
+    private void back_to_home() {
+        Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

@@ -49,7 +49,7 @@ public class WidgetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_userprofile);
+        setContentView(R.layout.activity_widget);
         mamogram_image=(ImageView) findViewById(R.id.mamogramimage);
         browsebtn=(Button) findViewById(R.id.browsebutton);
         uploadbtn=(Button) findViewById(R.id.uploadbutton);
