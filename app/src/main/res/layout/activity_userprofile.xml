@@ -60,10 +60,10 @@
             android:textColor="@color/black"
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
-        <TextView
+        <EditText
             android:id="@+id/Name_user"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="Gurvinder"
             android:layout_marginLeft="25dp"
             android:textSize="18dp"
@@ -99,10 +99,10 @@
             android:textColor="@color/black"
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
-        <TextView
+        <EditText
             android:id="@+id/email_user"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="gurvi1888@gmail.com"
             android:layout_marginLeft="25dp"
             android:textSize="18dp"
@@ -136,19 +136,7 @@
             android:paddingLeft="20dp"
             android:layout_marginLeft="-10dp"
             android:layout_marginTop="5dp"/>
-        <TextView
-            android:id="@+id/changepassword"
-            android:layout_width="240dp"
-            android:layout_height="50dp"
-            android:background="@drawable/bg_btn"
-            android:text="Change Password"
-            android:gravity="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="18dp"
-            android:drawableLeft="@drawable/ic_baseline_lock"
-            android:paddingLeft="20dp"
-            android:layout_marginLeft="-10dp"
-            android:layout_marginTop="15dp"/>
+
 
     </LinearLayout>
 
